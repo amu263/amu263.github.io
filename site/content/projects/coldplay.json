@@ -1,0 +1,21 @@
+{
+  "slug": "coldplay",
+  "name": "冷伴 ColdPlay",
+  "summary": "面向网易云音乐的 AI 冷门好歌发现与播放工具：用自然语言描述心情，让 LLM 解析意图，再从海量曲库中淘出被算法埋没的音乐；同时提供歌曲搜索、红心同步、连续播放、黑名单、下载和多端控制能力。",
+  "tech": [
+    "Python 3.10+",
+    "LLM + Embedding",
+    "网易云音乐 API",
+    "Node.js",
+    "REST API",
+    "WebSocket",
+    "SQLite",
+    "Flutter",
+    "ffmpeg"
+  ],
+  "status": "active",
+  "links": {
+    "github": "https://github.com/amu263/coldplay"
+  },
+  "readme": "冷伴 ColdPlay 不是 Coldplay 乐队资料站，而是一款 AI-powered hidden gem discovery for Netease Cloud Music 工具，目标是在网易云音乐的海量曲库里找到那些没有被推荐算法充分看见的好歌。\n\n## 它能做什么\n\n- **AI 心情推荐**：用自然语言描述当下的心情或想听的风格，例如“冷门悦耳的中文说唱”，由 LLM 解析意图并参与推荐。\n- **歌曲搜索**：按歌名、艺人、专辑搜索网易云音乐曲目。\n- **红心同步**：双向同步网易云红心歌单，支持本地记录与云端同步。\n- **连续播放**：维护播放队列、自动续播、循环播放，并跳过不可播放歌曲。\n- **黑名单**：屏蔽不喜欢的歌曲，避免它们再次进入播放流程。\n- **无损下载**：支持会员无损/高品下载，并自动写入 ID3 或 FLAC metadata 标签。\n- **终端 QR 登录**：在终端扫码登录网易云音乐，加密持久化 Cookie，重启后免重复登录。\n- **REST API + WebSocket**：核心服务运行在 PC 上，向其他客户端提供 HTTP API 与实时状态推送，另有 Flutter 移动端目录。\n\n## 项目结构\n\n- `core/`：Python 核心服务；包含入口、REST + WebSocket 服务、AI 意图解析与 Embedding 匹配、推荐引擎、网易云客户端与下载器、配置管理和 SQLite 数据库。\n- `.opencode/skills/coldplay/`：OpenCode 集成，提供 skill 定义和 Python API helper。\n- `mobile/`：Flutter 移动端。\n- `docs/adr/`：架构决策记录。\n- `NeteaseMusic-API/`：需要额外克隆的网易云音乐 Node.js API 依赖。\n\n## 快速部署\n\n项目依赖 Python 3.10+、Node.js、ffmpeg 和 NeteaseMusic-API。基本流程是克隆项目及 API 依赖，执行 `pip install -e core` 安装 Python 包，然后配置 OpenAI 兼容的 LLM API 环境变量：\n\n```bash\nexport COLDPLAY_LLM_KEY=sk-xxx\nexport COLDPLAY_LLM_BASE_URL=https://api.openai.com/v1\nexport COLDPLAY_LLM_MODEL=gpt-4o-mini\n```\n\n启动核心服务：\n\n```bash\ncd core\npython -m coldplay.main start\n```\n\n服务默认运行在 `localhost:9527`。启动后可以用 OpenCode skill 的 helper 执行扫码登录、心情推荐、红心同步和播放等操作：\n\n```bash\npython .opencode/skills/coldplay/coldplay_api.py login\npython .opencode/skills/coldplay/coldplay_api.py mood \"适合下雨天听的慵懒爵士\"\npython .opencode/skills/coldplay/coldplay_api.py hearts sync\npython .opencode/skills/coldplay/coldplay_api.py hearts play --shuffle\n```\n\n## API 能力\n\n核心服务提供 `/api/mood`、`/api/search`、`/api/control`、`/api/feedback`、`/api/download`、`/api/hearts`、`/api/login/qr`、`/api/login/check`、`/api/status` 等 REST 接口，并通过 `/ws` 推送实时状态。项目以 MIT License 发布。"
+}

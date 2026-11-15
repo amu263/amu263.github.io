@@ -1,0 +1,97 @@
+{
+  "slug": "ren-min-lu-night",
+  "title": "人民路夜游记",
+  "date": "2026-08-23",
+  "summary": "夜晚的人民路，总有种让人说不清的魔力。和朋友漫无目的地走着，路灯把影子拉得很长，街边小店的霓虹灯闪烁着，手机镜头里的一切都染上了赛博朋克的滤镜。用一加 ace2 随手拍下这些瞬间——没有构图、没有滤镜，只有那个夜晚最真实的氛围。事后翻看才发现，原来那种「内味」，就这样被定格了下来。",
+  "cover": "/images/gallery/ren-min-lu-night/01.jpg",
+  "photos": [
+    {
+      "src": "/images/gallery/ren-min-lu-night/01.jpg",
+      "alt": "人民路街景",
+      "caption": "人民路的夜晚，霓虹与路灯交织",
+      "exif": {
+        "camera": "一加 ACE 2",
+        "iso": "1600",
+        "aperture": "f/1.8",
+        "shutterSpeed": "1/30s"
+      }
+    },
+    {
+      "src": "/images/gallery/ren-min-lu-night/02.jpg",
+      "alt": "街边小店",
+      "caption": "亮着灯的小店，是夜晚最好的背景板",
+      "exif": {
+        "camera": "一加 ACE 2",
+        "iso": "800",
+        "aperture": "f/1.8",
+        "shutterSpeed": "1/60s"
+      }
+    },
+    {
+      "src": "/images/gallery/ren-min-lu-night/03.jpg",
+      "alt": "路灯光影",
+      "caption": "一盏路灯，一个故事",
+      "exif": {
+        "camera": "一加 ACE 2",
+        "iso": "1600",
+        "aperture": "f/1.8",
+        "shutterSpeed": "1/25s"
+      }
+    },
+    {
+      "src": "/images/gallery/ren-min-lu-night/04.jpg",
+      "alt": "夜色街道",
+      "caption": "夜晚的街道，总有种安静的力量",
+      "exif": {
+        "camera": "一加 ACE 2",
+        "iso": "3200",
+        "aperture": "f/1.8",
+        "shutterSpeed": "1/20s"
+      }
+    },
+    {
+      "src": "/images/gallery/ren-min-lu-night/05.jpg",
+      "alt": "街头一隅",
+      "caption": "街头的一角，藏着一整晚的回忆",
+      "exif": {
+        "camera": "一加 ACE 2",
+        "iso": "1600",
+        "aperture": "f/1.8",
+        "shutterSpeed": "1/30s"
+      }
+    },
+    {
+      "src": "/images/gallery/ren-min-lu-night/06.jpg",
+      "alt": "夜行人民路",
+      "caption": "和朋友一起的夜游，才是最快乐的时光",
+      "exif": {
+        "camera": "一加 ACE 2",
+        "iso": "800",
+        "aperture": "f/1.8",
+        "shutterSpeed": "1/60s"
+      }
+    },
+    {
+      "src": "/images/gallery/ren-min-lu-night/07.jpg",
+      "alt": "街景特写",
+      "caption": "有些风景，只属于夜晚",
+      "exif": {
+        "camera": "一加 ACE 2",
+        "iso": "1600",
+        "aperture": "f/1.8",
+        "shutterSpeed": "1/25s"
+      }
+    },
+    {
+      "src": "/images/gallery/ren-min-lu-night/08.jpg",
+      "alt": "人民路夜景",
+      "caption": "下次再来，也不知道是什么时候了",
+      "exif": {
+        "camera": "一加 ACE 2",
+        "iso": "3200",
+        "aperture": "f/1.8",
+        "shutterSpeed": "1/20s"
+      }
+    }
+  ]
+}

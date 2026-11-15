@@ -1,0 +1,15 @@
+{
+  "slug": "amu-music-photo-frame-app",
+  "name": "Amu-Music-Photo-Frame-APP",
+  "summary": "一个音乐相册框架应用，将音乐播放与照片展示结合，提供沉浸式的视听体验。支持自定义相册主题、歌曲列表管理等功能。",
+  "tech": [
+    "Vue 3",
+    "TypeScript",
+    "Vuetify 3",
+    "Node.js"
+  ],
+  "status": "active",
+  "links": {
+    "github": "https://github.com/amu263/Amu-Music-Photo-Frame-APP"
+  }
+}

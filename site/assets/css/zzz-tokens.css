@@ -1,0 +1,249 @@
+/* ==========================================================================
+   zzz-tokens.css · 绝区零设计 token（v2.0，2026-10-30）
+   来源：zzz.mihoyo.com 实测（见 references/07-evidence-and-sources.md）
+   规则：本文件是唯一允许出现裸色值的地方；业务 CSS 一律 var()。
+   ========================================================================== */
+
+:root {
+  /* ---------- 墨与纸 ---------- */
+  --zzz-black: #000000;
+  --zzz-ink-900: #181818;
+  --zzz-ink-800: #222122;
+  --zzz-ink-700: #333333;
+  --zzz-ink-500: #555451;
+  --zzz-ink-400: #7a7a7a;
+  --zzz-ink-300: #999999;
+  --zzz-paper-0: #efefef;
+  --zzz-paper-1: #f4f1eb;
+  --zzz-paper-2: #e7e7e7;
+  --zzz-paper-3: #dfdfdf;
+  --zzz-white: #ffffff;
+
+  /* ---------- 主色（一章一色，只做填充） ---------- */
+  --zzz-lime: #d8fa00;
+  --zzz-lime-bright: #dcfe00;
+  --zzz-lime-deep: #caf903;
+  --zzz-pink: #df267c;
+  --zzz-pink-hot: #ff4d8d;
+  --zzz-pink-soft: #f66895;
+  --zzz-orange: #e23a1e;
+  --zzz-orange-deep: #c83a1e;
+  --zzz-mint: #8fe0a0;
+  --zzz-mint-deep: #70d080;
+  --zzz-amber: #dc6337;      /* 角色页姓名橙（实测） */
+  --zzz-violet: #8a5cf6;
+  --zzz-cyan: #00e5ff;
+
+  /* ---------- 亮底可读的强调文字（对比度 ≥ 4.5） ---------- */
+  --zzz-accent-text: #b8231a;        /* 纸底 5.55:1 */
+  --zzz-accent-text-pink: #a3155a;   /* 纸底 6.49:1 */
+
+  /* ---------- 语义 ---------- */
+  --zzz-bg: var(--zzz-paper-0);
+  --zzz-bg-deep: var(--zzz-ink-900);
+  --zzz-fg: var(--zzz-ink-800);
+  --zzz-fg-muted: var(--zzz-ink-400);
+  --zzz-fg-invert: var(--zzz-white);
+  --zzz-line: var(--zzz-ink-800);
+  --zzz-line-soft: #c9c9c9;
+  --zzz-accent: var(--zzz-lime);
+  --zzz-accent-ink: var(--zzz-black); /* 主色块上的文字色 */
+
+  /* ---------- 字体 ---------- */
+  --zzz-font-display-cn: "inpin hongmengti", "Alibaba PuHuiTi 3.0", "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  --zzz-font-display-en: Impact, "Anton", "Archivo Black", "Arial Black", sans-serif;
+  --zzz-font-body: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", sans-serif;
+  --zzz-font-mono: "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+
+  /* ---------- 字阶 ---------- */
+  --zzz-fs-micro: 10px;
+  --zzz-fs-eyebrow: 11px;
+  --zzz-fs-xs: 12px;
+  --zzz-fs-sm: 14px;
+  --zzz-fs-body: 16px;
+  --zzz-fs-lead: 18px;
+  --zzz-fs-h4: 24px;
+  --zzz-fs-h3: 32px;
+  --zzz-fs-h2: 40px;
+  --zzz-fs-h1: clamp(56px, 6.2vw, 96px);
+  --zzz-fs-display: clamp(72px, 9vw, 150px);
+  --zzz-fs-num: 87px;
+  --zzz-fs-ghost: clamp(64px, 6.1vw, 117px);
+
+  /* ---------- 间距（4px 基线） ---------- */
+  --zzz-s-1: 4px;
+  --zzz-s-2: 8px;
+  --zzz-s-3: 12px;
+  --zzz-s-4: 16px;
+  --zzz-s-6: 24px;
+  --zzz-s-8: 32px;
+  --zzz-s-12: 48px;
+  --zzz-s-16: 64px;
+  --zzz-s-24: 96px;
+  --zzz-s-32: 128px;
+
+  /* ---------- 形状 ---------- */
+  --zzz-radius-0: 0px;
+  --zzz-radius-xs: 2px;
+  --zzz-radius-card: 26px;
+  --zzz-radius-pill: 999px;
+  --zzz-cut: 18px;
+  --zzz-cut-lg: 32px;
+  --zzz-border: 1px;
+  --zzz-border-heavy: 3px;
+  --zzz-shadow-sticker: 4px 4px 0 var(--zzz-black);
+
+  /* ---------- 版式 ---------- */
+  --zzz-maxw: 1440px;
+  --zzz-content: 960px;
+  --zzz-nav-h: 75px;
+  --zzz-gutter: clamp(20px, 5vw, 80px);
+
+  /* ---------- 动效 ---------- */
+  --zzz-ease-cut: cubic-bezier(0.77, 0, 0.18, 1);
+  --zzz-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --zzz-dur-fast: 150ms;
+  --zzz-dur-base: 300ms;
+  --zzz-dur-slow: 700ms;
+}
+
+/* ---------- Cinematic Dark 模式 ---------- */
+[data-zzz-theme="dark"] {
+  --zzz-bg: var(--zzz-ink-900);
+  --zzz-fg: var(--zzz-white);
+  --zzz-fg-muted: #b8b8b8;
+  --zzz-line: var(--zzz-white);
+  --zzz-line-soft: #3a3a3a;
+  --zzz-accent-text: var(--zzz-pink-hot);
+  --zzz-accent-text-pink: var(--zzz-pink-hot);
+}
+
+/* ---------- 主色主题 ---------- */
+[data-zzz-accent="lime"]   { --zzz-accent: var(--zzz-lime);   --zzz-accent-ink: #000; }
+[data-zzz-accent="pink"]     { --zzz-accent: var(--zzz-pink-hot); --zzz-accent-ink: #000; }
+[data-zzz-accent="pink-hot"] { --zzz-accent: var(--zzz-pink-hot); --zzz-accent-ink: #000; }
+[data-zzz-accent="magenta"]  { --zzz-accent: var(--zzz-pink);     --zzz-accent-ink: #000; }
+[data-zzz-accent="amber"]    { --zzz-accent: var(--zzz-amber);    --zzz-accent-ink: #000; }
+[data-zzz-accent="orange"] { --zzz-accent: var(--zzz-orange); --zzz-accent-ink: #000; }
+[data-zzz-accent="mint"]   { --zzz-accent: var(--zzz-mint);   --zzz-accent-ink: #000; }
+[data-zzz-accent="violet"]   { --zzz-accent: var(--zzz-violet);   --zzz-accent-ink: #000; }
+
+/* ---------- 基础重置 ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--zzz-bg);
+  color: var(--zzz-fg);
+  font-family: var(--zzz-font-body);
+  font-size: var(--zzz-fs-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+::selection { background: var(--zzz-accent); color: var(--zzz-accent-ink); }
+
+/* ---------- 通用工具 ---------- */
+.zzz-cut { clip-path: polygon(0 0, calc(100% - var(--zzz-cut)) 0, 100% var(--zzz-cut), 100% 100%, var(--zzz-cut) 100%, 0 calc(100% - var(--zzz-cut))); }
+.zzz-slash { clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%); }
+.zzz-noise::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .16; mix-blend-mode: multiply;
+  background-image: radial-gradient(rgba(0,0,0,.55) 0.5px, transparent 0.6px);
+  background-size: 4px 4px;
+}
+.zzz-halftone {
+  background-image: radial-gradient(rgba(0,0,0,.28) 1px, transparent 1.2px);
+  background-size: 6px 6px;
+}
+.zzz-stripes {
+  background-image: repeating-linear-gradient(-45deg, rgba(0,0,0,.18) 0 2px, transparent 2px 7px);
+}
+.zzz-eyebrow {
+  font-family: var(--zzz-font-display-en);
+  font-size: var(--zzz-fs-micro);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--zzz-fg-muted);
+}
+/* ==========================================================================
+   站点补充 token（仅此处允许裸色值）
+   ========================================================================== */
+:root {
+  --zzz-paper: #efefef;
+  --zzz-paper-warm: #f4f1eb;
+  --zzz-ink: #181818;
+  --zzz-line-rule: #cfcfcf;
+  --zzz-dark-0: #0b0b0b;
+  --zzz-dark-1: #111111;
+  --zzz-dark-2: #181818;
+  --zzz-dark-3: #232323;
+  --zzz-shadow-hard: 6px 6px 0 var(--zzz-black);
+  --zzz-font-cn: "Noto Sans CJK SC", "Noto Sans SC", "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei", sans-serif;
+  --zzz-font-display: "Anton", Impact, "Archivo Black", "Arial Black", sans-serif;
+  --zzz-font-heavy: "Archivo Black", "Anton", Impact, sans-serif;
+  --site-max: 1680px;
+  --rail: clamp(220px, 24vw, 420px);
+  --gutter: clamp(20px, 4.4vw, 76px);
+}
+[data-zzz-accent="pink"]     { --zzz-accent: var(--zzz-pink-hot); --zzz-accent-ink: var(--zzz-black); }
+[data-zzz-accent="lime"]     { --zzz-accent: var(--zzz-lime);     --zzz-accent-ink: var(--zzz-black); }
+[data-zzz-accent="orange"]   { --zzz-accent: var(--zzz-orange);   --zzz-accent-ink: var(--zzz-black); }
+[data-zzz-accent="mint"]     { --zzz-accent: var(--zzz-mint);     --zzz-accent-ink: var(--zzz-black); }
+[data-zzz-accent="amber"]    { --zzz-accent: var(--zzz-amber);    --zzz-accent-ink: var(--zzz-black); }
+[data-zzz-accent="magenta"]  { --zzz-accent: var(--zzz-pink);     --zzz-accent-ink: var(--zzz-black); }
+[data-zzz-accent="violet"]   { --zzz-accent: var(--zzz-violet);   --zzz-accent-ink: var(--zzz-black); }
+
+/* ==========================================================================
+   站点中性色阶与透明叠色（仅此文件允许裸色值）
+   ========================================================================== */
+:root {
+  --zzz-n-00: #0a0a0a;
+  --zzz-n-05: #111111;
+  --zzz-n-10: #141414;
+  --zzz-n-15: #1d1d1d;
+  --zzz-n-20: #222222;
+  --zzz-n-25: #252525;
+  --zzz-n-30: #2b2b2b;
+  --zzz-n-35: #333333;
+  --zzz-n-40: #3a3a3a;
+  --zzz-n-45: #444444;
+  --zzz-n-50: #4a4a4a;
+  --zzz-n-55: #555451;
+  --zzz-n-60: #5e5e5e;
+  --zzz-n-65: #6e6e6e;
+  --zzz-n-70: #7d7d7d;
+  --zzz-n-75: #8a8a8a;
+  --zzz-n-80: #9a9a9a;
+  --zzz-n-85: #a8a8a8;
+  --zzz-n-90: #b4b4b4;
+  --zzz-n-95: #cfcfcf;
+  --zzz-n-97: #d8d8d8;
+  --zzz-n-98: #e4e2dc;
+  --zzz-n-99: #e7e5df;
+  --zzz-n-100: #f2f2f2;
+  --zzz-n-101: #f6f4ef;
+
+  --zzz-a-black-026: rgba(0, 0, 0, 0.026);
+  --zzz-a-black-4: rgba(0, 0, 0, 0.4);
+  --zzz-a-black-5: rgba(0, 0, 0, 0.5);
+  --zzz-a-black-68: rgba(0, 0, 0, 0.68);
+  --zzz-a-black-70: rgba(0, 0, 0, 0.7);
+  --zzz-a-black-8: rgba(0, 0, 0, 0.8);
+  --zzz-a-black-86: rgba(0, 0, 0, 0.86);
+  --zzz-a-black-92: rgba(0, 0, 0, 0.92);
+  --zzz-a-black-22: rgba(0, 0, 0, 0.22);
+  --zzz-a-white-03: rgba(255, 255, 255, 0.03);
+  --zzz-a-white-045: rgba(255, 255, 255, 0.045);
+  --zzz-a-paper-09: rgba(239, 239, 239, 0.09);
+  --zzz-a-paper-16: rgba(239, 239, 239, 0.16);
+  --zzz-a-paper-28: rgba(239, 239, 239, 0.28);
+  --zzz-a-paper-55: rgba(239, 239, 239, 0.55);
+  --zzz-a-paper-62: rgba(239, 239, 239, 0.62);
+  --zzz-a-orange-02: rgba(226, 58, 30, 0.02);
+  --zzz-a-orange-035: rgba(226, 58, 30, 0.035);
+  --zzz-a-orange-14: rgba(226, 58, 30, 0.14);
+  --zzz-a-orange-22: rgba(226, 58, 30, 0.22);
+  --zzz-a-orange-55: rgba(226, 58, 30, 0.55);
+  --zzz-a-lime-05: rgba(216, 250, 0, 0.05);
+}

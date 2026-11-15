@@ -1,0 +1,18 @@
+{
+  "slug": "amuboke-no-zero",
+  "name": "amuboke-no.zero",
+  "summary": "用 Vue 3 + Vuetify 3 + Vite SSG 搭建的个人博客，支持文章、图集、项目展示、音乐档案和友链功能。暗/亮双主题，极客风 UI 设计。",
+  "tech": [
+    "Vue 3",
+    "TypeScript",
+    "Vuetify 3",
+    "Vite",
+    "vite-ssg",
+    "UnoCSS",
+    "Sharp"
+  ],
+  "status": "active",
+  "links": {
+    "github": "https://github.com/amu263/amuboke-no.zero"
+  }
+}

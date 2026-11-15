@@ -1,0 +1,64 @@
+{
+  "slug": "hui-dao-wei-lai",
+  "title": "回到未来",
+  "artist": "方大同",
+  "album": "回到未来",
+  "year": 2012,
+  "genres": [
+    "Neo-Soul",
+    "灵魂乐",
+    "华语流行"
+  ],
+  "date": "2026-08-23",
+  "cover": "/images/listen/hui-dao-wei-lai.jpg",
+  "summary": "方大同的每一次出击好像就改变了音乐市场一些；其实，他没有要带你去哪里，他只是一步步地把你带回去而已——回到那个音乐的Wonderland，纯粹为节奏与歌声醉心的单纯世界。《回到未来》这张专辑是对思维及影响的解剖与重组，在回顾过去的同时，兼视当下的一刻，让节奏喂养灵魂，要曾经倒下的都成为饱满音墙，他让音乐回到未来，却美好了我们的现在。",
+  "links": {
+    "music": "https://music.163.com/#/album?id=2265001"
+  },
+  "tracks": [
+    {
+      "title": "Can You Feel The Music",
+      "duration": "2:42"
+    },
+    {
+      "title": "I Want You Back",
+      "duration": "4:19"
+    },
+    {
+      "title": "你就是",
+      "duration": "3:45"
+    },
+    {
+      "title": "千纸鹤",
+      "duration": "4:06"
+    },
+    {
+      "title": "关于爱的定义",
+      "duration": "3:59"
+    },
+    {
+      "title": "麦恩莉 (My only)",
+      "duration": "4:48"
+    },
+    {
+      "title": "孤独孩儿",
+      "duration": "3:36"
+    },
+    {
+      "title": "Romeo",
+      "duration": "3:31"
+    },
+    {
+      "title": "妈妈说",
+      "duration": "4:07"
+    },
+    {
+      "title": "爱立刻",
+      "duration": "4:19"
+    },
+    {
+      "title": "BB88",
+      "duration": ""
+    }
+  ]
+}
