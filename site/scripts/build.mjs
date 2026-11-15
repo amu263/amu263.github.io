@@ -10,7 +10,9 @@ import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const SITE_DIR = path.resolve(__dirname, '..')
 const OUT = path.join(SITE_DIR, 'dist')
-const SITE_URL = (process.env.SITE_URL || 'https://amu263.github.io/').replace(/\/+$/, '') + '/'
+const SITE_URL = (process.env.SITE_URL || 'https://amu263.github.io/')
+  .replace(/^http:\/\/([^/]*\.github\.io)/i, 'https://$1')
+  .replace(/\/+$/, '') + '/'
 
 const SITE = {
   name: 'AMU ARCHIVE',
