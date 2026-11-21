@@ -1,9 +1,19 @@
-name: Deploy AMU ARCHIVE
+name: Deploy AMU blog to GitHub Pages
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
+    inputs:
+      blog_repository:
+        description: Blog repository to build
+        required: true
+        default: amu263/amuboke-no.zero
+      blog_ref:
+        description: Branch, tag or SHA to build
+        required: true
+        default: master
+  schedule:
+    # Daily sync from the blog master; the Cloudflare deploy remains the primary.
+    - cron: '23 4 * * *'
 
 permissions:
   contents: read
@@ -18,23 +28,43 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout blog
+        uses: actions/checkout@v4
         with:
-          node-version: 22
-      - id: pages
-        uses: actions/configure-pages@v5
+          repository: ${{ inputs.blog_repository || 'amu263/amuboke-no.zero' }}
+          ref: ${{ inputs.blog_ref || 'master' }}
+          path: blog
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
-          enablement: true
-      - name: Build site
-        run: node site/scripts/build.mjs
-        env:
-          SITE_URL: ${{ steps.pages.outputs.base_url }}/
-      - name: Check site
-        run: node site/scripts/check.mjs
-      - uses: actions/upload-pages-artifact@v3
+          version: 11
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          path: site/dist
+          node-version: '22.23.4'
+          cache: 'pnpm'
+          cache-dependency-path: blog/apps/web/pnpm-lock.yaml
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+        working-directory: blog/apps/web
+
+      - name: Build three themes
+        run: pnpm build
+        working-directory: blog/apps/web
+
+      - name: Check build output
+        run: |
+          test -f blog/apps/web/dist/index.html
+          test -f blog/apps/web/dist/zzz/index.html
+          test -f blog/apps/web/dist/genshin/index.html
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: blog/apps/web/dist
 
   deploy:
     needs: build
@@ -43,5 +73,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
